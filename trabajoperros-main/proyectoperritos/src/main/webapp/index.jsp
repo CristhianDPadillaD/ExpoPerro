@@ -7,6 +7,7 @@
 <%@page import="java.io.IOException"%>
 <%@include file="temps/header.jsp" %>
        
+   <!-- Imagen de encabezado con la clase "PerroBandera" -->
 
    <image  class= "PerroBandera" src="./img/perro.jpg" >
     <div class="row">
@@ -77,8 +78,8 @@
             String dataPath = application.getRealPath("/Data/datosperros.ser");
             
             // Repetimos el proceso de carga de datos porque:
-            // Si invocas directamente la página JSP de listar videos, el request no tiene el atributo que estás buscando
-            // Es nulo, de ahí que te dé ese error. @RubioRic (Stack Overflow en español)
+            // Si invocas directamente la pÃ¡gina JSP de listar videos, el request no tiene el atributo que estÃ¡s buscando
+            // Es nulo, de ahÃ­ que te dÃ© ese error. @RubioRic (Stack Overflow en espaÃ±ol)
             
             File archivo = new File(dataPath);
           try {
@@ -91,7 +92,7 @@
                 }
                 } catch (IOException e) {
                     e.printStackTrace();
-                    // Manejar el error aquí, por ejemplo, registrándolo o tomando medidas adecuadas.
+                    // Manejar el error aquÃ­, por ejemplo, registrÃ¡ndolo o tomando medidas adecuadas.
                 }
 
             
@@ -100,7 +101,7 @@
             // Pero respetamos la logica de Java
             
              if (misPerros != null) {
-                System.out.println("Se cargaron " + misPerros.size() + " perros exitosamente añadidos");
+                System.out.println("Se cargaron " + misPerros.size() + " perros exitosamente aÃ±adidos");
                 for (perro miperro : misPerros) {
                 
         %>
