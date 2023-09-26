@@ -11,6 +11,7 @@ import java.io.Serializable;
  * @author Grupo 7
  */
 public class perro implements Serializable{
+    
     // Creamos variables de las caracteristicas que va a llevar el perro
     String nombre;
     String raza;
