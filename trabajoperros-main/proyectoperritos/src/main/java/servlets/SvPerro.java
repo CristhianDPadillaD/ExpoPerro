@@ -23,10 +23,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+//servlet llamado SvPerro
 @WebServlet(name = "SvPerro", urlPatterns = {"/SvPerro"})
 public class SvPerro extends HttpServlet {
-
+//array llamado division
     ArrayList <perro> division = new ArrayList <>();
     
     public void init() throws ServletException{
@@ -43,7 +43,8 @@ public class SvPerro extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //captura de los datos 
+                
+        //captura de los datos y se imprimen en pantalla
      
      String nombre = request.getParameter("nombre");
      String raza = request.getParameter("raza");
