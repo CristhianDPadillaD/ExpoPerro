@@ -14,6 +14,9 @@
     <div class="col">
      <div class="card">
         <div class="card-body" >
+
+   <!-- Formulario para ingresar información sobre un perro -->
+
             <form action="SvPerro" method="POST">
                 <div class="container text-center">
                  <legend>Ingresar Perro </legend>
