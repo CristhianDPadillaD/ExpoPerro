@@ -88,7 +88,7 @@ public class SvPerro extends HttpServlet {
     }
        
       
-    
+    //metodo para guardar los datos del perro - escritura 
         private void guardarDatosPerro() {
         try {
            
@@ -108,6 +108,7 @@ public class SvPerro extends HttpServlet {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(division);
             oos.close();
+            //lo que se imprime en la pantalla si los datos no son nulos 
             System.out.println("los datos de videos guardados exitosamente!!: " + filePath);
         } catch (IOException e) {
           e.printStackTrace();
