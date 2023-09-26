@@ -23,18 +23,22 @@
                 <div class="container text-center">
                  <legend>Ingresar Perro </legend>
                   </div>
+    <!-- Campo para ingresar el nombre del perro -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Nombre</span>
                         <input type="text" class="form-control" name="nombre"  placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
+     <!-- Campo para ingresar la raza del perro -->
                      <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Raza</span>
                         <input type="text" class="form-control" name="raza"  placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
+       <!-- Campo para ingresar la URL de la foto del perro -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Fot</span>
                         <input type="text" class="form-control" name="foto"  placeholder="url foto" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
+        <!-- desplegable para asignar puntos a un  perro -->
                     <select class="form-select" aria-label="Default select example" name="punto" required="true" >
                         <option selected>Puntos</option>
                         <option value="1">Uno</option>
@@ -49,11 +53,13 @@
                         <option value="10">Diez</option>
                       </select>
                 <br>
+     <!-- Campo para ingresar la edad del perro -->
                         <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Edad</span>
                         <input type="number" class="form-control" name="edad"  placeholder="Numero" aria-label="Username" aria-describedby="basic-addon1" required="true">
                         </div> 
-                
+
+      <!-- Botón para enviar el formulario -->          
                  <div class="mb-3">
                          <input type="submit" value="Insertar Perro" class="btn btn-primary">
                    </div>
@@ -64,6 +70,8 @@
     <div class="col">
              <div class="card">
      <div class="card-body">
+
+        <!-- Tabla para mostrar los datos de los perros -->
           <table class="table table-bordered">
                     <thead>
                         <tr>
