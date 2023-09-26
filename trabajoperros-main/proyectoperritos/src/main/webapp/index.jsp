@@ -18,6 +18,8 @@
    <!-- Formulario para ingresar información sobre un perro -->
 
             <form action="SvPerro" method="POST">
+
+   <!-- Título del formulario -->
                 <div class="container text-center">
                  <legend>Ingresar Perro </legend>
                   </div>
