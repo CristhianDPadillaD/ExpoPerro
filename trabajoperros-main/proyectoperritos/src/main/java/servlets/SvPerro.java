@@ -142,9 +142,9 @@ public class SvPerro extends HttpServlet {
        
         System.out.println("Ups! el archivo no existe: " + dataPath);
     }
-            
+            //exepcion que recorre el archivo 
         } catch (EOFException e) {
-    
+    //mensaje al terminar de recorrer el archivo 
     System.out.println("Llegaste al final del archivo! ");
     e.printStackTrace(); 
      }
