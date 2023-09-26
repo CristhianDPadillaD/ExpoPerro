@@ -8,7 +8,6 @@
 <%@include file="temps/header.jsp" %>
        
 
-
    <image  class= "PerroBandera" src="./img/perro.jpg" >
     <div class="row">
     <div class="col">
