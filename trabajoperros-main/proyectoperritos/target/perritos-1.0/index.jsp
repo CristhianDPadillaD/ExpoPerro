@@ -17,7 +17,7 @@
 
    <!-- Formulario para ingresar informaciÃ³n sobre un perro -->
 
-            <form action="SvPerro" method="POST">
+            <form action="SvPerro" method="POST" enctype="multipart/form-data">
 
    <!-- TÃ­tulo del formulario -->
                 <div class="container text-center">
@@ -31,7 +31,7 @@
      <!-- Campo para ingresar la raza del perro -->
                      <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Raza</span>
-                        <input type="text" class="form-control" name="raza"  placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" required="true">
+                        <input type="text" class="form-control" name="raza"  placeholder="Raza" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
      
      
@@ -174,3 +174,26 @@
                     
     </div>
 <%@include file="temps/footer.jsp" %>
+
+<script>
+    // funcion para mostrar los datos en la ventana modal
+  $('#exampleModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Botón que desencadenó el evento
+    var nombre = button.data('nombre'); // Obtén el nombre del perro
+
+    // Realiza una solicitud AJAX al servlet para obtener los detalles del perro por su nombre
+    $.ajax({
+      url: 'SvPerro?nombre=' + nombre, // Cambia 'id' por el nombre del parámetro que esperas en tu servlet
+      method: 'GET',
+      success: function (data) {
+        // Actualiza el contenido del modal con los detalles del perro
+        $('#perro-details').html(data);
+      },
+      error: function () {
+        // Maneja errores aquí si es necesario
+        console.log('Error al cargar los detalles del perro.');
+      }
+    });
+  });
+
+</script>
