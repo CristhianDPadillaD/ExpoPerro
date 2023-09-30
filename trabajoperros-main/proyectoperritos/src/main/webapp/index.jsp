@@ -33,11 +33,15 @@
                         <span class="input-group-text" id="basic-addon1">Raza</span>
                         <input type="text" class="form-control" name="raza"  placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
+     
+     
        <!-- Campo para ingresar la URL de la foto del perro -->
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Fot</span>
-                        <input type="text" class="form-control" name="foto"  placeholder="url foto" aria-label="Username" aria-describedby="basic-addon1" required="true">
+                  <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Foto</span>
+                        <input type="file" class="form-control" name="foto"  placeholder="url foto" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
+       
+       
         <!-- desplegable para asignar puntos a un  perro -->
                     <select class="form-select" aria-label="Default select example" name="punto" required="true" >
                         <option selected>Puntos</option>
@@ -127,8 +131,12 @@
                             <td><%= miperro .getPuntos() %></td>
                             <td><%= miperro .getEdad() %></td>
                              <td>  <div class="btn-group me-2" role="group" aria-label="First group">
+                                     
+                                     <a href="#" class="btn btn-primary" data-bs-toogle="modal" data-bs-target="#exampleModal" data-nombre="<%=miperro.getNombre()%>"><i class ="fa-solid fa-eye"></i> </a>
+                                     
                                      <button type="button" class="btn btn-secondary"><i class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i class="fa-solid fa-eraser"></i></button>
+
+                                    <button type="button" class="btn btn-secondary"><i class="fa-solid fa-trash"></i></button>
                                   </div></td>
                         </tr>
            <%
@@ -142,5 +150,30 @@
      </div>
    </div>
     </div>
+                  <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+         <div class="modal-dialog"> 
+             <div class="modal-content"> 
+                 <div class="modal-header"> 
+                    <h5 class="modal-title" id="exampleModalLabel">Detalles del Perro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                 </div>
+                 <div class="modal-body"> 
+                  
+                     <div id="perro-details"> 
+                         <!-- Aquí se-->
+                </div>
+                 </div> 
+                 <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> 
+                </div>
+             </div> 
+         </div> 
+     </div>
+        
+                    
+                    
+                    
+                    
     </div>
 <%@include file="temps/footer.jsp" %>

@@ -7,28 +7,42 @@
 <%@page import="java.io.IOException"%>
 <%@include file="temps/header.jsp" %>
        
+   <!-- Imagen de encabezado con la clase "PerroBandera" -->
 
    <image  class= "PerroBandera" src="./img/perro.jpg" >
     <div class="row">
     <div class="col">
      <div class="card">
         <div class="card-body" >
+
+   <!-- Formulario para ingresar informaciÃ³n sobre un perro -->
+
             <form action="SvPerro" method="POST">
+
+   <!-- TÃ­tulo del formulario -->
                 <div class="container text-center">
                  <legend>Ingresar Perro </legend>
                   </div>
+    <!-- Campo para ingresar el nombre del perro -->
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Nombre</span>
                         <input type="text" class="form-control" name="nombre"  placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
+     <!-- Campo para ingresar la raza del perro -->
                      <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Raza</span>
                         <input type="text" class="form-control" name="raza"  placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Fot</span>
-                        <input type="text" class="form-control" name="foto"  placeholder="url foto" aria-label="Username" aria-describedby="basic-addon1" required="true">
+     
+     
+       <!-- Campo para ingresar la URL de la foto del perro -->
+                  <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Foto</span>
+                        <input type="file" class="form-control" name="foto"  placeholder="url foto" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
+       
+       
+        <!-- desplegable para asignar puntos a un  perro -->
                     <select class="form-select" aria-label="Default select example" name="punto" required="true" >
                         <option selected>Puntos</option>
                         <option value="1">Uno</option>
@@ -43,11 +57,13 @@
                         <option value="10">Diez</option>
                       </select>
                 <br>
+     <!-- Campo para ingresar la edad del perro -->
                         <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">Edad</span>
                         <input type="number" class="form-control" name="edad"  placeholder="Numero" aria-label="Username" aria-describedby="basic-addon1" required="true">
                         </div> 
-                
+
+      <!-- BotÃ³n para enviar el formulario -->          
                  <div class="mb-3">
                          <input type="submit" value="Insertar Perro" class="btn btn-primary">
                    </div>
@@ -58,6 +74,8 @@
     <div class="col">
              <div class="card">
      <div class="card-body">
+
+        <!-- Tabla para mostrar los datos de los perros -->
           <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -77,8 +95,8 @@
             String dataPath = application.getRealPath("/Data/datosperros.ser");
             
             // Repetimos el proceso de carga de datos porque:
-            // Si invocas directamente la página JSP de listar videos, el request no tiene el atributo que estás buscando
-            // Es nulo, de ahí que te dé ese error. @RubioRic (Stack Overflow en español)
+            // Si invocas directamente la pÃ¡gina JSP de listar videos, el request no tiene el atributo que estÃ¡s buscando
+            // Es nulo, de ahÃ­ que te dÃ© ese error. @RubioRic (Stack Overflow en espaÃ±ol)
             
             File archivo = new File(dataPath);
           try {
@@ -91,7 +109,7 @@
                 }
                 } catch (IOException e) {
                     e.printStackTrace();
-                    // Manejar el error aquí, por ejemplo, registrándolo o tomando medidas adecuadas.
+                    // Manejar el error aquÃ­, por ejemplo, registrÃ¡ndolo o tomando medidas adecuadas.
                 }
 
             
@@ -100,7 +118,7 @@
             // Pero respetamos la logica de Java
             
              if (misPerros != null) {
-                System.out.println("Se cargaron " + misPerros.size() + " perros exitosamente añadidos");
+                System.out.println("Se cargaron " + misPerros.size() + " perros exitosamente aÃ±adidos");
                 for (perro miperro : misPerros) {
                 
         %>
@@ -113,8 +131,12 @@
                             <td><%= miperro .getPuntos() %></td>
                             <td><%= miperro .getEdad() %></td>
                              <td>  <div class="btn-group me-2" role="group" aria-label="First group">
+                                     
+                                     <a href="#" class="btn btn-primary" data-bs-toogle="modal" data-bs-target="#exampleModal" data-nombre="<%=miperro.getNombre()%>"><i class ="fa-solid fa-eye"></i> </a>
+                                     
                                      <button type="button" class="btn btn-secondary"><i class="fa-solid fa-pen"></i></button>
-                                    <button type="button" class="btn btn-secondary"><i class="fa-solid fa-eraser"></i></button>
+
+                                    <button type="button" class="btn btn-secondary"><i class="fa-solid fa-trash"></i></button>
                                   </div></td>
                         </tr>
            <%
@@ -128,5 +150,30 @@
      </div>
    </div>
     </div>
+                  <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+         <div class="modal-dialog"> 
+             <div class="modal-content"> 
+                 <div class="modal-header"> 
+                    <h5 class="modal-title" id="exampleModalLabel">Detalles del Perro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                 </div>
+                 <div class="modal-body"> 
+                  
+                     <div id="perro-details"> 
+                         <!-- Aquí se-->
+                </div>
+                 </div> 
+                 <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> 
+                </div>
+             </div> 
+         </div> 
+     </div>
+        
+                    
+                    
+                    
+                    
     </div>
 <%@include file="temps/footer.jsp" %>
