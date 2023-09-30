@@ -132,7 +132,7 @@
                             <td><%= miperro .getEdad() %></td>
                              <td>  <div class="btn-group me-2" role="group" aria-label="First group">
                                      
-                                     <a href="#" class="btn btn-primary" data-bs-toogle="modal" data-bs-target="#exampleModal" data-nombre="<%=miperro.getNombre()%>"><i class ="fa-solid fa-eye"></i> </a>
+                                     <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-nombre="<%=miperro.getNombre()%>"><i class ="fa-solid fa-eye"></i> </a>
                                      
                                      <button type="button" class="btn btn-secondary"><i class="fa-solid fa-pen"></i></button>
 
@@ -170,10 +170,7 @@
              </div> 
          </div> 
      </div>
-        
-                    
-                    
-                    
+           
                     
     </div>
 <%@include file="temps/footer.jsp" %>
