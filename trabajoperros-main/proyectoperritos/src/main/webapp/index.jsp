@@ -274,7 +274,7 @@
      </div>  
     
    
- 
+            <!-- Modal para borrar-->
       <div class="modal fade" id="confModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
          <div class="modal-dialog"> 
              <div class="modal-content"> 
