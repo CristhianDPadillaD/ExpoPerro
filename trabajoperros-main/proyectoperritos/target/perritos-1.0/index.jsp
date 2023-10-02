@@ -105,6 +105,7 @@
     </div>
   </div>
 </nav>
+              
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -160,7 +161,7 @@
                             <td><%= miperro .getEdad() %></td>
                              <td>  <div class="btn-group me-2" role="group" aria-label="First group">
                                      
-                                     <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-nombre="<%=miperro.getNombre()%>"><i class ="fa-solid fa-eye"></i> </a>
+                                     <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-nombre="<%=miperro.getNombre()%>" ><i class ="fa-solid fa-eye"></i> </a>
                                      
                                      <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal" data-nombre="<%=miperro.getNombre()%>" ><i class="fa-solid fa-pen" ></i></a>
 
@@ -230,7 +231,7 @@
      
       
                   <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Foto</span>
+                        <span class="input-group-text" id="basic-addon1"> Foto </span>
                         <input type="file" class="form-control" name="foto"  placeholder="url foto" aria-label="Username" aria-describedby="basic-addon1" required="true">
                    </div>
        
@@ -258,7 +259,7 @@
 
                
                  <div class="mb-3">
-                         <input type="submit" value="Insertar Perro" class="btn btn-primary">
+                         <input type="submit" value="Actualizar Perro" class="btn btn-primary">
                    </div>
             </form>
                    

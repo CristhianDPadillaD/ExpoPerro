@@ -49,6 +49,8 @@ public class SvPerro extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        
+        
            String nombre = request.getParameter("nombre");
         perro perro = BuscarPerroPorNombre(nombre); // Implementa la lógica para buscar el perro en tu lista de perros
         if (perro != null) {
