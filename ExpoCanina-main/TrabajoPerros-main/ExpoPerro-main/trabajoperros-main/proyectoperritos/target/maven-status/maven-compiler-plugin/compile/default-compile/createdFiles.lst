@@ -1,0 +1,6 @@
+servlets\EliminarPerroServlet.class
+servlets\SvPerro.class
+com\umariana\mundo\resources\JavaEE8Resource.class
+com\umariana\mundo\JAXRSConfiguration.class
+com\umariana\mundo\perro.class
+com\umariana\mundo\exposicionPerro.class
