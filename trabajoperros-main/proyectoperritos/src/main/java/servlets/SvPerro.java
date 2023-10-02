@@ -56,7 +56,7 @@ public class SvPerro extends HttpServlet {
             String perroHtml = "<h2>Nombre: " + perro.getNombre() + "</h2>" +
                                "<p>Raza: " + perro.getRaza() + "</p>" +
                                "<p>Puntos: " + perro.getPuntos() + "</p>" +
-                               "<p>Edad (meses): " + perro.getEdad() + "</p>" +
+                               "<p>Edad (años): " + perro.getEdad() + "</p>" +
                                "<img src='imagenes/" + perro.getImagen()+ "' alt='" + perro.getNombre() + "' width='100%'/>";
             response.setContentType("text/html");
             response.getWriter().write(perroHtml);
@@ -193,6 +193,13 @@ public class SvPerro extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+    
+    private void borrarPerro(){
+        
+        division.remove(this);
+        
+        
+    }
 
     private void subirDatosPerro(ServletContext servletContext) {
             

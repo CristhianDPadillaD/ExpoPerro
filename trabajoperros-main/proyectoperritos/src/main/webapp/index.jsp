@@ -74,9 +74,37 @@
     <div class="col">
              <div class="card">
      <div class="card-body">
-
+         
+         
         <!-- Tabla para mostrar los datos de los perros -->
           <table class="table table-bordered">
+              <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Ordenar por
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Nombre</a></li>
+            <li><a class="dropdown-item" href="#">Puntaje Mayor</a></li>
+            <li><a class="dropdown-item" href="#">Puntaje Menor</a></li>
+            <li><a class="dropdown-item" href="#">Edad Mayor</a></li>
+            <li><a class="dropdown-item" href="#">Edad Menor</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Ingrese el nombre del perro" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -134,9 +162,9 @@
                                      
                                      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-nombre="<%=miperro.getNombre()%>"><i class ="fa-solid fa-eye"></i> </a>
                                      
-                                     <button type="button" class="btn btn-secondary"><i class="fa-solid fa-pen"></i></button>
+                                     <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal" data-nombre="<%=miperro.getNombre()%>" ><i class="fa-solid fa-pen" ></i></a>
 
-                                    <button type="button" class="btn btn-secondary"><i class="fa-solid fa-trash"></i></button>
+                                    <a href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#confModal" data-nombre="<%=miperro.getNombre()%>" ><i class="fa-solid fa-trash" ></i></a>
                                   </div></td>
                         </tr>
            <%
@@ -145,11 +173,13 @@
                 out.print("No hay Perros disponibles.");
             }
          %>
-                    </tbody>
+                    </tbody>    
                 </table>
      </div>
    </div>
     </div>
+                    
+                    
                   <!-- Modal -->
      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
          <div class="modal-dialog"> 
@@ -171,9 +201,102 @@
          </div> 
      </div>
            
-                    
-    </div>
+                           <!-- Modal Editar -->
+     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+         <div class="modal-dialog"> 
+             <div class="modal-content"> 
+                 <div class="modal-header"> 
+                    <h5 class="modal-title" id="exampleModalLabel">Editar perro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                 </div>
+                 <div class="modal-body"> 
+                   <form action="SvPerro" method="POST" enctype="multipart/form-data">
+
+   
+                <div class="container text-center">
+                 <legend>Editar perro</legend>
+                  </div>
+  
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre</span>
+                        <input type="text" class="form-control" name="nombre"  placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" required="true">
+                   </div>
+     
+                     <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Raza</span>
+                        <input type="text" class="form-control" name="raza"  placeholder="Raza" aria-label="Username" aria-describedby="basic-addon1" required="true">
+                   </div>
+     
+     
+      
+                  <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Foto</span>
+                        <input type="file" class="form-control" name="foto"  placeholder="url foto" aria-label="Username" aria-describedby="basic-addon1" required="true">
+                   </div>
+       
+       
+        
+                    <select class="form-select" aria-label="Default select example" name="punto" required="true" >
+                        <option selected>Puntos</option>
+                        <option value="1">Uno</option>
+                        <option value="2">Dos</option>
+                        <option value="3">Tres</option>
+                        <option value="4">Cuatro</option>
+                        <option value="5">Cinco</option>
+                        <option value="6">Seis</option>
+                        <option value="7">Seite</option>
+                        <option value="8">Ocho</option>
+                        <option value="9">Nueve</option>
+                        <option value="10">Diez</option>
+                      </select>
+                <br>
+     
+                        <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Edad</span>
+                        <input type="number" class="form-control" name="edad"  placeholder="Numero" aria-label="Username" aria-describedby="basic-addon1" required="true">
+                        </div> 
+
+               
+                 <div class="mb-3">
+                         <input type="submit" value="Insertar Perro" class="btn btn-primary">
+                   </div>
+            </form>
+                   
+                        
+                </div>
+                 </div> 
+                 <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> 
+                </div>
+             </div> 
+         </div> 
+     </div>  
+    
+   
+ 
+      <div class="modal fade" id="confModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+         <div class="modal-dialog"> 
+             <div class="modal-content"> 
+                 <div class="modal-header"> 
+                    <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar el perro?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> 
+                 </div>
+                 <div class="modal-body"> 
+                  
+                     <button id = "confirmar" class="btn btn-secondary">Si, estoy seguro</button>
+                     <button id = "cancelar" class = "btn btn-secondary" data-bs-dismiss="modal" > Cancelar</button>
+                </div>
+                 </div> 
+                 <div class="modal-footer">
+                </div>
+             </div> 
+         </div> 
+     </div>
+    
+
+    <script src="script.js"></script>
 <%@include file="temps/footer.jsp" %>
+
 
 <script>
     // funcion para mostrar los datos en la ventana modal

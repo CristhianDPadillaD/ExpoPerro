@@ -14,7 +14,7 @@ public class exposicionPerro {
     
     //Array donde se guradan los perros
   public ArrayList <perro> darPerros = new ArrayList<>();
+  
    
-   
-    
+     
 }
